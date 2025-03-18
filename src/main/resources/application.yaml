@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: demo
+    data:
+        redis:
+            host: 121.41.47.113
+            port: 6379
+            database: 0
+            password: 123456
+
+server:
+    port: 18080
