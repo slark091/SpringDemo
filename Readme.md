@@ -19,11 +19,11 @@
 ## 安装步骤
 1. 克隆仓库：
     ```bash
-    git clone https://github.com/yourusername/spring-cloud-demo.git
+    git clone https://github.com/slark091/SpringDemo.git
     ```
 2. 进入项目目录：
     ```bash
-    cd spring-cloud-demo
+    cd SpringDemo
     ```
 3. 安装依赖：
     ```bash
