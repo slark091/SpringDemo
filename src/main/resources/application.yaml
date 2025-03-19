@@ -6,7 +6,9 @@ spring:
             host: 121.41.47.113
             port: 6379
             database: 0
-            password: 123456
-
+            password: 5KNXvtUSWsmsXKw4ySWb
+        mongodb:
+            database: test
+            uri: mongodb://mongo:yrP5dAbcTBaCAxfDz56G@121.41.47.113:27017/test?authSource=admin
 server:
     port: 18080
