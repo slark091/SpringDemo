@@ -4,16 +4,22 @@ import com.example.demo.model.mongodb.User;
 import com.example.demo.repository.mongodb.UserRepository;
 import com.example.demo.service.UserService;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
-
+    
+    @Value("${spring.kafka.template.default-topic}")
+    private String TOPIC;
+    
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
-    }
+    }   
 
     @Override
     public User create(User user) {
@@ -48,4 +54,10 @@ public class UserServiceImpl implements UserService {
     public void updateAge(String id, int age) {
         userRepository.updateAge(id, age);
     }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
 }

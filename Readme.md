@@ -9,12 +9,17 @@
 - Redis (缓存)
 - MongoDB (数据库)
 - Springdoc (API文档)
+- Kafka (日志系统)
+- Docker (容器化部署)
 
 ## 环境要求
 - JDK 17+
 - Maven 3.6+
 - Redis 6.0+
 - MongoDB 5.0+
+- Kafka 3.0+
+- Docker 20.10+
+- Docker Compose v2+
 
 ## 安装步骤
 1. 克隆仓库：
@@ -34,17 +39,32 @@
     mvn spring-boot:run
     ```
 
+## Docker部署
+项目提供了Docker支持，相关文件位于`deploy/docker`目录：
+- *.sh：可执行的shell脚本
+- kafka-zookeeper.yaml：服务编排配置
+
+使用Docker Compose启动：
+```bash
+cd deploy/docker
+docker-compose -f kafka-zookeeper.yaml up -d
+```
+
 ## 主要功能
 - REST API接口
 - Redis缓存集成
 - MongoDB数据持久化
 - Swagger UI API文档 (访问路径: http://localhost:18080/swagger-ui.html)
+- Kafka日志系统（记录所有API调用）
+- 容器化部署支持
 
 ## 配置说明
 项目配置文件位于`src/main/resources/application.yml`，包含：
 - Redis配置
 - MongoDB连接配置
 - Springdoc配置
+- Kafka配置
+- Docker环境配置
 
 ## 贡献指南
 欢迎贡献！请按以下步骤：

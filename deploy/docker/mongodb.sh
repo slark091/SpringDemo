@@ -1,0 +1,11 @@
+sudo docker run \
+    --restart=always \
+    --name mongo \
+    -p 27017:27017 \
+    -e TZ=Asia/Shanghai \
+    -v /data/mongo/data:/data/db \
+    -v /data/mongo/log:/data/log \
+    --privileged=true \
+    -e MONGO_INITDB_ROOT_USERNAME=mongo \
+    -e MONGO_INITDB_ROOT_PASSWORD=yrP5dAbcTBaCAxfDz56G \
+    -d mongo
